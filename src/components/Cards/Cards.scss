@@ -1,0 +1,31 @@
+.simpson-card {
+  background-color: #ffcc00;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #2b2b2b;
+}
+
+.img-simpson {
+  height: 250px;
+  object-fit: contain;
+  background-color: #fff3b0;
+}
+
+.simpson-header {
+  background-color: #0074cc;
+  color: white;
+  font-weight: bold;
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
+}
+
+.simpson-footer {
+  background-color: #0074cc;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.simpson-card:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
