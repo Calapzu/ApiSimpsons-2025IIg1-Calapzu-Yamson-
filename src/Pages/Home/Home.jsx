@@ -9,41 +9,52 @@ const Home = () => {
 
     const [pageNumber, setPageNumber] = useState(1);
     const [search, setSearch] = useState("");
+    let [fetchedData, updateFetchedData] = useState({});
+    const { pages = 0, results = [] } = fetchedData;
 
-    const api = `https://thesimpsonsapi.com/api/characters?page=${pageNumber}`;
-  
-    const {data: fetchedData, loading, error} = useFetchCharacters(api);
-    const {info, results = []} = fetchedData || [];  
+    let api = `https://thesimpsonsapi.com/api/characters?page=${pageNumber}`;
+
+    useEffect(() => {
+        (async function () {
+            let data = await fetch(api).then((res) => res.json());
+            updateFetchedData(data);
+        })();
+    }, [api]);
 
     const filteredResults = results.filter((character) =>
-    character.name.toLowerCase().includes(search.toLowerCase())
-  );
-    
-  return (
-    <div className='App'>
-        <h1 className='text-center chewy my-4'> Los Simpsons</h1>
+        character.name.toLowerCase().includes(search.toLowerCase())
+    );
 
-        <Search setSearch={setSearch}/>
+    return (
+        <div className='App'>
+            <h1 className='text-center chewy my-4'> Los Simpsons</h1>
 
-        <div className='container'>
-            <div className='row'>
-                <div className='col-3'>
-                    <Filters/>
-                </div>
-                <div className='col-8'>
-                    <div className='row'>
-                    <Cards results={filteredResults}/>
+            <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
+
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-3'>
+                        <Filters />
+                    </div>
+                    <div className='col-8'>
+                        <div className='row'>
+                            <Cards results={filteredResults} />
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <Pagination
+                pages={pages}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+
+            />
+            )
+
+
         </div>
-        {!search && (
-            <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
-        )
-        }
-        
-    </div>
-  )
+    )
 }
 
 export default Home
