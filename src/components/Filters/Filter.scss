@@ -1,0 +1,56 @@
+/* Estilo general inspirado en Los Simpson */
+
+/* Título */
+.title-simpsons {
+  color: #1a237e;
+  text-shadow: 2px 2px #fdd835;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
+/* Botón de limpiar filtros */
+.clear-filters-simpsons {
+  color: #e53935;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.clear-filters-simpsons:hover {
+  color: #b71c1c;
+  transform: scale(1.1) rotate(-2deg);
+  text-shadow: 0px 0px 6px #fdd835;
+}
+
+/* Acordeón con estilo Simpsons */
+.accordion-simpsons {
+  border-top: 2px #fbc02d;
+}
+
+.accordion-simpsons .accordion-item {
+  background-color: #fff59d;
+  border: 2px solid #fdd835;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.accordion-simpsons .accordion-item:hover {
+  background-color: #fff176;
+  transform: scale(1.02);
+}
+
+.accordion-simpsons .accordion-button {
+  background-color: #fdd835;
+  color: #1a237e;
+  font-weight: bold;
+}
+
+.accordion-simpsons .accordion-button:not(.collapsed) {
+  background-color: #1a237e;
+  color: #fdd835;
+}
+
+.accordion-simpsons .accordion-body {
+  background-color: #fffde7;
+  color: #212121;
+}

@@ -12,11 +12,11 @@ const Cards = ({ results }) => {
             {results.map((x) => {
                 const { id, name, portrait_path, occupation, age, status } = x;
 
-                let badgeClass = "bg-secondary";
+                let badgeclassName = "bg-secondary";
                 if (status === "Alive") {
-                    badgeClass = "bg-success";
+                    badgeclassName = "bg-success";
                 } else if (status === "Deceased") {
-                    badgeClass = "bg-danger";
+                    badgeclassName = "bg-danger";
                 }
 
 
@@ -41,7 +41,7 @@ const Cards = ({ results }) => {
                             <div className="p-2 simpson-footer">
                                 <div className="fs-5"><strong>Ocupacion:</strong> {occupation} </div>
                                 <div className="fs-5"> <strong>Edad:</strong>  {age || "Sin edad"}</div>
-                                <div className={`badge ${badgeClass} fs-5`}>{status}</div>
+                                <div className={`badge ${badgeclassName} fs-5`}>{status}</div>
 
                                 {/*(() => {
                                     if (status === "Deceased") {
