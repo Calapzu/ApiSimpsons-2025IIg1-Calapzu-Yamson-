@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { info } from 'sass'
+import React, { useEffect, useState } from 'react';
 
 export  function useFetchCharacters(api) {
 
     const [data, setData] = useState({info: {}, results: [], count: 0 });
-    const [loading, setloading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        setloading(true);
+        setLoading(true);
 
         fetch(api)
         .then((response) => {
@@ -21,8 +20,8 @@ export  function useFetchCharacters(api) {
             setData(result);
             setError(null);
         })
-        .catch((err) => setError(err.messge))
-        .finally(() => setloading(false));
+        .catch((err) => setError(err.message))
+        .finally(() => setLoading(false));
     }, [api])
 
   return {data, loading, error};

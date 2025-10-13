@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Filters from '../../components/Filters/Filters'
 import Cards from '../../components/Cards/Cards'
 import { useFetchCharacters } from '../../Hooks/useFetchCharacters';
@@ -9,14 +9,15 @@ const Home = () => {
 
     const [pageNumber, setPageNumber] = useState(1);
     const [search, setSearch] = useState("");
-    
-    const api = `https://thesimpsonsapi.com/api/characters?page=${pageNumber}&name=${search}`;
 
+    const api = `https://thesimpsonsapi.com/api/characters?page=${pageNumber}`;
+  
     const {data: fetchedData, loading, error} = useFetchCharacters(api);
-    const {info, results} = fetchedData || [];
+    const {info, results = []} = fetchedData || [];  
 
-    console.log(fetchedData);
-    
+    const filteredResults = results.filter((character) =>
+    character.name.toLowerCase().includes(search.toLowerCase())
+  );
     
   return (
     <div className='App'>
@@ -31,13 +32,16 @@ const Home = () => {
                 </div>
                 <div className='col-8'>
                     <div className='row'>
-                    <Cards results={results}/>
+                    <Cards results={filteredResults}/>
                     </div>
                 </div>
             </div>
         </div>
-
-        <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+        {!search && (
+            <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+        )
+        }
+        
     </div>
   )
 }
