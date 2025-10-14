@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <title>404 - Página no encontrada</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Redirige cualquier ruta no reconocida a la raíz con #
+      window.location.replace("/#/");
+    </script>
     <style>
       body {
         display: flex;
@@ -49,10 +53,5 @@
   <p>¡Ups! Parece que esta ruta no existe.</p>
   <p class="loading">Redirigiendo al inicio...</p>
   <a href="/">Ir al inicio</a>
-
-  <script>
-      // Redirige a la raíz para que la SPA maneje la ruta
-      window.location.replace('/ApiSimpsons-2025IIg1-Calapzu-Yamson-/');
-    </script>
 </body>
 </html>
