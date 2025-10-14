@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../../components/Cards/CardsEpisodes";
 import Pagination from "../../components/Pagination/Pagination";
+import Loader from '../../components/Loader/Loader';
 
 import '../Episodes/Episodes.scss'
 
@@ -8,9 +9,11 @@ const Episodes = () => {
   const [results, setResults] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [pages, setPages] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async function fetchEpisodes() {
+      setLoading(true);
       try {
         const res = await fetch(`https://thesimpsonsapi.com/api/episodes?page=${pageNumber}`);
         const data = await res.json();
@@ -37,9 +40,21 @@ const Episodes = () => {
         setResults(updatedResults);
       } catch (error) {
         console.error("Error al cargar episodios:", error);
+      } finally {
+        setTimeout(() => setLoading(false), 3000);
       }
     })();
   }, [pageNumber]);
+
+  if (loading) return <Loader />;
+
+  if (!loading && results.length === 0) {
+        return (
+            <div className="text-center mt-5 text-light">
+                <h3>No se encontraron Episodes</h3>
+            </div>
+        );
+    }
 
   return (
     <div className="container my-4 episodes-container">

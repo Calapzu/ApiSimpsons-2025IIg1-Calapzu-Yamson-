@@ -9,6 +9,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Episodes from './Pages/Episodes/Episodes.jsx';
 import Location from './Pages/Location/Location.jsx';
 import CardDetail from './components/Cards/CardDetail.jsx';
+
 import NotFound from './components/NotFound/NotFound.jsx';
 
 
@@ -24,7 +25,7 @@ function App() {
         <Route path="/location" element={<Location />} />
 
         <Route path='*' element={<NotFound/>}/>
-        
+
       </Routes>
     </Router>
   );
