@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>404 - Página no encontrada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #fffbea;
+      color: #333;
+    }
+    h1 {
+      font-size: 6rem;
+      color: #ffcc00;
+      text-shadow: 2px 2px 5px black;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+    a {
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      background-color: #ffcc00;
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    a:hover {
+      background-color: #ffd633;
+    }
+  </style>
+</head>
+<body>
+  <h1>404</h1>
+  <h2>Página no encontrada</h2>
+  <p>Redirigiendo a la versión correcta...</p>
+  <a href="/">Ir al inicio</a>
+
+  <script>
+    // Redirige cualquier ruta a HashRouter
+    const path = window.location.pathname + window.location.search + window.location.hash;
+    if (!path.startsWith('/#/')) {
+      window.location.href = '/#' + path;
+    }
+  </script>
+</body>
+</html>
