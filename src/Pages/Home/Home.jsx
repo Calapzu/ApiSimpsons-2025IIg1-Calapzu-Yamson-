@@ -4,6 +4,9 @@ import Cards from '../../components/Cards/Cards'
 import { useFetchCharacters } from '../../Hooks/useFetchCharacters';
 import Pagination from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
+import Navbar from '../../components/Navbar/Navbar';
+
+
 
 const Home = () => {
 
@@ -52,8 +55,6 @@ const Home = () => {
 
     return (
         <div className='App'>
-            <h1 className='text-center chewy my-4'> Los Simpsons</h1>
-
             <Search setSearch={setSearch} setPageNumber={setPageNumber} />
 
             <div className='container'>
@@ -65,7 +66,7 @@ const Home = () => {
                     />
                     <div className='col-8'>
                         <div className='row'>
-                            <Cards results={filteredResults} />
+                            <Cards page="/" results={filteredResults} />
                         </div>
                     </div>
                 </div>

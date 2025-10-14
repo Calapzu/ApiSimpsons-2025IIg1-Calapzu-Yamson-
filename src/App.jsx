@@ -3,13 +3,26 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 
 import './App.css';
 import Home from './Pages/Home/Home';
+import Navbar from './components/Navbar/Navbar.jsx';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Episodes from './Pages/Episodes/Episodes.jsx';
+import Location from './Pages/Location/Location.jsx';
+import CardDetail from './components/Cards/CardDetail.jsx';
 
 
 function App() {
   return (
-    <div>
-    <Home/>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='/:id' element={<CardDetail/>}/>
+
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/location" element={<Location />} />
+      </Routes>
+    </Router>
   );
 }
 

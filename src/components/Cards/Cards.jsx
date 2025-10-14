@@ -1,16 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../Cards/Cards.scss'
 
-const Cards = ({ results }) => {
+const Cards = ({ page, results }) => {
 
     if (!results || results.length === 0) {
         return <h2 className="text-center">No se encontraron personajes</h2>
     }
 
+
     return (
         <div className="row">
             {results.map((x) => {
                 const { id, name, portrait_path, occupation, age, status } = x;
+
+                const imageUrl = id
+                    ? `https://cdn.thesimpsonsapi.com/200/character/${id}.webp`
+                    : "https://upload.wikimedia.org/wikipedia/en/0/0d/Homer_Simpson_2006.png";
+
 
                 let badgeclassName = "bg-secondary";
                 if (status === "Alive") {
@@ -21,7 +28,12 @@ const Cards = ({ results }) => {
 
 
                 return (
-                    <div key={id} className="col-lg-4 col-md-6 col-12 mb-4">
+                    <Link
+                        style={{ textDecoration: "none" }}
+                        to={`${page}${id}`}
+                        key={id}
+                        className="col-lg-4 col-md-6 col-12 mb-4"
+                    >
 
                         <div className="card simpson-card shadow-sm border-0 text-center">
                             <div className="p-2 simpson-header fs-4">
@@ -29,11 +41,7 @@ const Cards = ({ results }) => {
                             </div>
 
                             <img
-                                src={
-                                    portrait_path
-                                        ? `https://cdn.thesimpsonsapi.com/500${portrait_path}`
-                                        : "https://upload.wikimedia.org/wikipedia/en/0/0d/Homer_Simpson_2006.png"
-                                }
+                                src={imageUrl}
                                 alt={name}
                                 className="card-img-top img-simpson"
                             />
@@ -55,7 +63,7 @@ const Cards = ({ results }) => {
 
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 );
             })}
         </div>

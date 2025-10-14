@@ -1,0 +1,79 @@
+.navbar-simpsons {
+  background-color: #fdd835; /* Amarillo Simpsons */
+  border-bottom: 5px solid #1a237e; /* Azul Simpsons */
+  font-family: 'Comic Sans MS', 'Fredoka One', cursive;
+  box-shadow: 0 4px 10px rgba(26, 35, 126, 0.3);
+}
+
+/* Título */
+.text-simpsons {
+  color: #1a237e;
+  text-shadow: 2px 2px #fbc02d;
+  transition: all 0.2s ease-in-out;
+}
+
+.text-simpsons:hover {
+  color: #0d47a1;
+  transform: scale(1.05);
+}
+
+/* Íconos del botón (menú móvil) */
+.navbar-toggler {
+  border: 3px solid #1a237e;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background-color: #fff59d;
+}
+
+.navbar-toggler .fa-bars,
+.navbar-toggler .fa-x {
+  color: #1a237e;
+  font-size: 1.3rem;
+  transition: transform 0.2s;
+}
+
+.navbar-toggler:hover {
+  background-color: #fff176;
+  transform: rotate(-2deg);
+}
+
+/* Mostrar/ocultar íconos según estado */
+.navbar-toggler[aria-expanded="false"] .close {
+  display: none;
+}
+.navbar-toggler[aria-expanded="true"] .open {
+  display: none;
+}
+
+/* Links */
+.navbar-nav .nav-link {
+  color: #1a237e;
+  font-weight: bold;
+  margin: 0 8px;
+  transition: all 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d47a1;
+  transform: rotate(-2deg) scale(1.1);
+}
+
+/* Activo */
+.navbar-nav .nav-link.active {
+  background-color: #1a237e;
+  color: #fdd835 !important;
+  border-radius: 10px;
+  padding: 5px 10px;
+  box-shadow: 0 0 10px #1a237e;
+}
+
+/* Pequeño efecto animado */
+.navbar-simpsons:hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+}
