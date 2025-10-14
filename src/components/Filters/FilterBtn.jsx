@@ -1,11 +1,16 @@
 import React from 'react'
 import '../Filters/FilterBtn.scss'
 
-const FilterBtn = ({ name, index, items, task, setPageNumber }) => {
+const FilterBtn = ({ name, index, items, task, setPageNumber, activeFilter }) => {
+
+    const filterValue = items.toLowerCase();
 
     const handleClick = () => {
+
+        const newValue = activeFilter === filterValue ? "" : filterValue;
+
         if (typeof setPageNumber === "function") setPageNumber(1);
-        if (typeof task === "function") task(items);
+        if (typeof task === "function") task(newValue);
         else console.warn("⚠️ task no es una función en FilterBtn", task);
     };
 
@@ -18,6 +23,8 @@ const FilterBtn = ({ name, index, items, task, setPageNumber }) => {
                     name={name}
                     id={`${name}-${index}`}
                     onClick={handleClick}
+                    checked={activeFilter === filterValue}
+                    readOnly={true}  
                 />
                 <label
                     className="btn-simpsons"

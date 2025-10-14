@@ -9,12 +9,12 @@ const Search = ({ setSearch, setPageNumber }) => {
 
     return (
         <form
-            className='d-flex justify-content-center gap-4 mb-5'
+            className='search-simpsons d-flex justify-content-center align-items-center flex-wrap gap-3 mb-5'
         >
             <input
                 type="text"
                 placeholder='Buscar por personaje...'
-                className='input form-control w-50'
+                className='input-simpsons'
                 onChange={handleSearch}
             />
         </form>

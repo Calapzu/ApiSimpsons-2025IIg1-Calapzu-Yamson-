@@ -1,6 +1,6 @@
 
 .pagination-simpsons {
-  font-family: 'Comic Sans MS', 'Fredoka One', cursive;
+  font-family: 'Bangers', cursive;
   color: #1a237e;
   display: flex;
   flex-wrap: wrap;
@@ -11,15 +11,15 @@
 }
 
 .btn-simpsons {
-  display: inline-flex;               /* 🔹 Hace que el botón se ajuste al contenido */
+  display: inline-flex;               
   align-items: center;
   justify-content: center;
-  background-color: #fdd835;          /* Amarillo Simpsons */
-  color: #1a237e;                     /* Azul Simpsons */
+  background-color: #fdd835;     
+  color: #1a237e;            
   border: 2px solid #1a237e;
   border-radius: 6px;
-  padding: 6px 10px;                  /* 🔹 Reduce el tamaño horizontal */
-  min-width: auto;                    /* 🔹 Evita que se estire */
+  padding: 6px 10px;                  
+  min-width: auto;                    
   width: auto;
   cursor: pointer;
   font-size: 0.85rem;
@@ -42,9 +42,10 @@
   padding: 4px 8px;
 }
 
-/* Números de página */
+
 .page-item-simpsons {
   list-style: none;
+  
 }
 
 .page-link-simpsons {
@@ -60,6 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .page-link-simpsons:hover {
@@ -67,7 +69,7 @@
   background-color: #ffeb3b;
 }
 
-/* Página activa */
+
 .active-simpsons .page-link-simpsons {
   background-color: #1a237e;
   color: #fdd835;
@@ -75,7 +77,7 @@
   box-shadow: 0 0 6px #1a237e;
 }
 
-/* Animación divertida (ligera) */
+
 .pagination-simpsons:hover {
   animation: wiggle 0.4s ease-in-out;
 }

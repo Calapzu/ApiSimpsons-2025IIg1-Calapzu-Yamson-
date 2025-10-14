@@ -5,12 +5,11 @@ import Status from './Category/Status.jsx';
 import '../Filters/Filter.scss'
 
 
-const Filters = ({ setStatus, setGender, setPageNumber }) => {
+const Filters = ({ setStatus, setGender, setPageNumber, status, gender }) => {
   let clear = () => {
     setStatus("");
-    setPageNumber("");
+    setPageNumber(1);
     setGender("");
-    window.location.reload(false);
   };
   return (
     <div className='col-3 filters-simpsons'>
@@ -24,8 +23,8 @@ const Filters = ({ setStatus, setGender, setPageNumber }) => {
       </div>
 
       <div className="accordion accordion-simpsons" id="accordionExample">
-       <Genders setGender={setGender} setPageNumber={setPageNumber} />
-       <Status setStatus={setStatus} setPageNumber={setPageNumber} />
+       <Genders setGender={setGender} setPageNumber={setPageNumber} gender={gender}/>
+       <Status setStatus={setStatus} setPageNumber={setPageNumber} status={status}/>
       </div>
 
 

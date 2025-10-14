@@ -1,24 +1,29 @@
 .episodes-title {
-  font-family: "chewy", cursive;
+  font-family: "Bangers", "Chewy", cursive;
   text-transform: uppercase;
-  font-size: 70px;
-  letter-spacing: 5px;
+  font-size: 3.5rem;
+  letter-spacing: 4px;
   text-align: center;
-  padding: 15px 30px;
-  border-radius: 15px;
-  text-shadow: 3px 3px #2b2b2b;
+  color: #1a237e; 
+  text-shadow: 2px 2px #fdd835; 
+
+  border-radius: 20px;
   display: block;
+  width: fit-content; 
+  margin: 30px auto; 
+  padding: 15px 30px;
+  box-shadow: 0 6px 12px rgba(26, 35, 126, 0.2);
   transition: all 0.3s ease;
+  animation: titlePop 0.5s ease-out;
 }
 
-/* Hover divertido */
+
 .episodes-title:hover {
   transform: scale(1.05) rotate(-2deg);
-  background-color: #ffd633;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(26, 35, 126, 0.35);
 }
 
-/* Animación de entrada */
 @keyframes titlePop {
   from {
     transform: scale(0.9);
@@ -30,6 +35,17 @@
   }
 }
 
-.episodes-title {
-  animation: titlePop 0.5s ease-out;
+@media (max-width: 992px) {
+  .episodes-title {
+    font-size: 2.5rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .episodes-title {
+    font-size: 1.8rem;
+    padding: 8px 16px;
+    border-radius: 15px;
+  }
 }

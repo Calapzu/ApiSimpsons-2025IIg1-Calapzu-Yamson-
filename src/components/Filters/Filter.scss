@@ -1,37 +1,51 @@
-/* Estilo general inspirado en Los Simpson */
-
-/* Título */
 .title-simpsons {
   color: #1a237e;
   text-shadow: 2px 2px #fdd835;
   letter-spacing: 1px;
   font-weight: 900;
+  font-size: 2.5rem;
+  text-align: center;
+  animation: appearTitle 0.5s ease-out;
 }
 
-/* Botón de limpiar filtros */
+@keyframes appearTitle {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotate(-1deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
 .clear-filters-simpsons {
   color: #e53935;
   font-weight: bold;
+  border: 2px solid #b71c1c;
+  background-color: #fff8e1;
+  border-radius: 10px;
   transition: all 0.2s ease;
+  font-size: 1rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .clear-filters-simpsons:hover {
-  color: #b71c1c;
-  transform: scale(1.1) rotate(-2deg);
-  text-shadow: 0px 0px 6px #fdd835;
-}
-
-/* Acordeón con estilo Simpsons */
-.accordion-simpsons {
-  border-top: 2px #fbc02d;
+  background-color: #fdd835;
+  color: #1a237e;
+  transform: scale(1.08) rotate(-2deg);
+  text-shadow: 0 0 6px #fff;
 }
 
 .accordion-simpsons .accordion-item {
   background-color: #fff59d;
-  border: 2px solid #fdd835;
-  border-radius: 10px;
-  margin-bottom: 8px;
-  transition: all 0.2s ease;
+  border: 3px solid #fdd835;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(26, 35, 126, 0.25);
 }
 
 .accordion-simpsons .accordion-item:hover {
@@ -43,14 +57,52 @@
   background-color: #fdd835;
   color: #1a237e;
   font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.25s ease;
 }
 
 .accordion-simpsons .accordion-button:not(.collapsed) {
   background-color: #1a237e;
   color: #fdd835;
+  border-bottom: 3px solid #fdd835;
 }
 
 .accordion-simpsons .accordion-body {
   background-color: #fffde7;
   color: #212121;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 12px;
+  border-top: 2px solid #fdd835;
+  font-family: 'Comic Neue', cursive;
+}
+
+@media (max-width: 992px) {
+  .title-simpsons {
+    font-size: 2rem;
+  }
+  .clear-filters-simpsons {
+    font-size: 0.95rem;
+    padding: 6px 12px;
+  }
+  .accordion-simpsons .accordion-button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .title-simpsons {
+    font-size: 1.5rem;
+  }
+  .clear-filters-simpsons {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+  .accordion-simpsons .accordion-button {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+  .accordion-simpsons .accordion-item {
+    margin-bottom: 6px;
+  }
 }

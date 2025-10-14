@@ -1,0 +1,81 @@
+.notfound-container {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #fff59d, #fbc02d);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #1a237e;
+  font-family: 'Bangers', cursive;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.notfound-container h1 {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #1a237e;
+  text-shadow: 4px 4px 0 #fdd835, 6px 6px 0 #0d47a1;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+.notfound-container h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+  text-shadow: 2px 2px #fdd835;
+}
+
+.notfound-container p {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.1rem;
+  color: #212121;
+  margin-top: 8px;
+  margin-bottom: 25px;
+}
+
+.btn-home {
+  background-color: #1a237e;
+  color: #fdd835;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 10px rgba(26, 35, 126, 0.3);
+  border: 3px solid #fdd835;
+}
+
+.btn-home:hover {
+  background-color: #0d47a1;
+  color: #fff59d;
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 0 12px #1a237e;
+}
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .notfound-container h1 {
+    font-size: 5rem;
+  }
+
+  .notfound-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-home {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+}

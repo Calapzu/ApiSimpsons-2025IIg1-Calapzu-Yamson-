@@ -11,6 +11,7 @@ const Location = () => {
   const [pages, setPages] = useState(1);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     (async function fetchLocation() {
       setLoading(true);
